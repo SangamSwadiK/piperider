@@ -19,6 +19,7 @@ import { SingleReportSchema } from '../../sdlc/single-report-schema';
 import { SRTabProfilingDetails } from './SRTabProfilingDetails';
 import { SRTabTestDetails } from './SRTabTestDetails';
 import { SRTableOverview } from './SRTableOverview';
+import { tableSchemaSchema } from '../../sdlc/zod-types';
 
 interface Props {
   data: SingleReportSchema;
@@ -27,6 +28,7 @@ interface Props {
 export default function SingleReport({ data, name }: Props) {
   const { datasource: source, tables } = data;
   const table = tables[name];
+  // tableSchemaSchema.parse(table);
 
   useDocumentTitle(name);
 
